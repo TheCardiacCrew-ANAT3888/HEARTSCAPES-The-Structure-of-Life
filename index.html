@@ -2,488 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Heartscapes – The Structure of Life</title>
+  <title>Heartscapes – Home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #050608;
-      --bg-alt: #10111a;
-      --accent: #ff4b8b;
-      --accent-soft: rgba(255, 75, 139, 0.4);
-      --border-soft: rgba(255, 255, 255, 0.08);
-      --text-main: #ffffff;
-      --text-muted: #c0c3d9;
-      --radius-xl: 18px;
-      --radius-xxl: 28px;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.7);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: radial-gradient(circle at top, #1a1830 0, #050608 45%, #020308 100%);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #050608;
+      color: #ffffff;
     }
-
-    /* Layout shell */
-    .page-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 2.5rem;
-    }
-
-    header {
+    .nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
-      padding: 0.75rem 0 1.25rem;
-    }
-
-    .brand {
-      display: flex;
       align-items: center;
-      gap: 0.9rem;
+      padding: 0.75rem 1.25rem;
+      background: #0b0d14;
+      border-bottom: 1px solid #242635;
     }
-
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background:
-        conic-gradient(from 200deg,
-          #ff4b8b,
-          #ffb347,
-          #ffd86f,
-          #6fe7ff,
-          #c56bff,
-          #ff4b8b);
-      position: relative;
-      box-shadow: 0 0 30px rgba(255, 75, 139, 0.6);
-    }
-
-    .brand-mark::after {
-      content: "";
-      position: absolute;
-      inset: 4px;
-      background: radial-gradient(circle at 30% 20%, #ffffff33 0, #050608 55%);
-      border-radius: inherit;
-    }
-
-    .brand-text-title {
-      font-size: 1.25rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .brand-text-subtitle {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .pill {
-      padding: 0.35rem 0.9rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      background: rgba(11, 13, 24, 0.8);
-      backdrop-filter: blur(14px);
-    }
-
-    /* Intro section */
-    .intro-card {
-      margin-top: 0.5rem;
-      padding: 1.25rem 1.25rem 1.4rem;
-      border-radius: var(--radius-xxl);
-      background: linear-gradient(135deg, rgba(16, 17, 26, 0.98), rgba(12, 14, 26, 0.94));
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 1.25rem;
-    }
-
-    @media (max-width: 800px) {
-      .intro-card {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .intro-left h1 {
-      margin: 0 0 0.4rem;
-      font-size: 1.9rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .intro-left p {
-      margin: 0.25rem 0;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 38rem;
-    }
-
-    .intro-tags {
-      margin-top: 0.7rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .intro-tag {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: radial-gradient(circle at top left,
-        rgba(255, 75, 139, 0.2),
-        rgba(5, 6, 10, 0.9));
-      color: var(--text-main);
-    }
-
-    .intro-right {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0.5rem;
-      border-radius: 20px;
-      padding: 0.75rem 0.9rem;
-      border: 1px dashed rgba(255, 255, 255, 0.24);
-      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.04), transparent 60%);
-    }
-
-    .intro-right-title {
-      font-size: 0.82rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .intro-right-main {
+    .nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 1rem;
       font-size: 0.9rem;
     }
-
-    .intro-right-sub {
-      font-size: 0.78rem;
-      color: var(--text-muted);
+    .nav a:hover {
+      text-decoration: underline;
     }
-
-    /* Hero grid */
-    .section-heading {
-      margin: 1.8rem 0 0.8rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 0.9rem;
-    }
-
-    @media (max-width: 1100px) {
-      .hero-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 750px) {
-      .hero-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 520px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius-xl);
-      text-decoration: none;
-      color: inherit;
-      background: var(--bg-alt);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      min-height: 210px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
-    }
-
-    .hero-media {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4 / 3;
-      background: radial-gradient(circle at center, #30324f, #050608);
-    }
-
-    .hero-card img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      filter: brightness(0.78);
-      transition: transform 0.35s ease, filter 0.35s ease;
-    }
-
-    .hero-card:hover img {
-      transform: scale(1.05);
-      filter: brightness(0.94);
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top,
-        rgba(0, 0, 0, 0.82),
-        rgba(0, 0, 0, 0.15));
-      padding: 0.7rem 0.75rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-
-    .hero-tag {
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-title {
-      font-size: 0.98rem;
+    .nav-brand {
       font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .hero-cta {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .hero-meta {
-      padding: 0.55rem 0.75rem 0.7rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      background: radial-gradient(circle at top,
-        rgba(255, 255, 255, 0.02),
-        rgba(5, 6, 8, 0.98));
-    }
-
-    .hero-meta-label {
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
-
-    .hero-meta-dots {
-      display: inline-flex;
-      gap: 3px;
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
     }
-
-    .hero-meta-dot {
-      width: 4px;
-      height: 4px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.3);
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
     }
-
-    footer {
-      margin-top: 2.2rem;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 0.5rem;
+    p {
+      max-width: 40rem;
+      line-height: 1.5;
     }
-
-    footer a {
-      color: var(--text-muted);
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li a {
+      color: #8fb3ff;
       text-decoration: none;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
     }
-
-    footer a:hover {
-      color: var(--text-main);
-      border-bottom-style: solid;
+    li a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="page-wrap">
 
-    <!-- Header -->
-    <header>
-      <div class="brand">
-        <div class="brand-mark" aria-hidden="true"></div>
-        <div>
-          <div class="brand-text-title">Heartscapes</div>
-          <div class="brand-text-subtitle">The Structure of Life</div>
-        </div>
-      </div>
-      <div class="pill">
-        Modern anatomy &amp; art showcase
-      </div>
-    </header>
+  <!-- Shared nav -->
+<header>
+  <nav class="nav">
+    <a href="index.html" class="nav-brand">Heartscapes</a>
+    <div class="nav-links">
+      <a href="video.html">Video</a>
+      <a href="objects/index.html">Objects</a>
+      <a href="about/index.html">About us</a>
+      <a href="audio-guide.html">Audio Guide</a>
+      <a href="ar-view.html">AR View</a>
+    </div>
+  </nav>
+</header>
 
-    <!-- Intro / hero preface -->
-    <section class="intro-card" aria-label="Introduction">
-      <div class="intro-left">
-        <h1>Cardiac form, function &amp; imagination</h1>
-        <p>
-          A curated journey through the heart: anatomical cross sections, textile interpretations,
-          watercolour histology, geo-historical perspectives and valve pathology. Designed as a
-          visual companion for students, clinicians and the simply curious.
-        </p>
-        <div class="intro-tags">
-          <span class="intro-tag">Anatomy</span>
-          <span class="intro-tag">Histology</span>
-          <span class="intro-tag">Art in Medicine</span>
-          <span class="intro-tag">Valve Pathology</span>
-        </div>
-      </div>
-      <div class="intro-right">
-        <div class="intro-right-title">Exhibition Overview</div>
-        <div class="intro-right-main">
-          Explore five anchor pieces from the Heartscapes SharePoint site rebuilt as a standalone
-          HTML gallery. Each tile links back to its original page.
-        </div>
-        <div class="intro-right-sub">
-          Tip: if you host this outside SharePoint, swap the tile links and images for absolute
-          <code>https://</code> URLs.
-        </div>
-      </div>
-    </section>
 
-    <!-- Hero grid -->
-    <h2 class="section-heading">Featured works</h2>
-    <main class="hero-grid" aria-label="Featured Heartscapes items">
-      <!-- Cross Sections -->
-      <a class="hero-card"
-         href="/sites/HeartscapesTheStructureofLife/SitePages/X-sections.aspx">
-        <div class="hero-media">
-          <img
-            src="/sites/HeartscapesTheStructureofLife/SiteAssets/SitePages/ShowcaseHome(1)/955824416WhatsApp-Image-2025-11-03-at-22.41.19_1762238022224.jpeg"
-            alt="Series of anatomical heart cross sections" />
-          <div class="hero-overlay">
-            <div class="hero-tag">Object</div>
-            <div class="hero-title">Cross Sections</div>
-            <div class="hero-cta">View the sectioned heart →</div>
-          </div>
-        </div>
-        <div class="hero-meta">
-          <span class="hero-meta-label">Modality</span>
-          <span>Physical specimen · Macro anatomy</span>
-        </div>
-      </a>
+  <main>
+    <h1>Heartscapes – The Structure of Life</h1>
+    <p>
+      A simple static site with multiple sections:
+      curated videos, object galleries, team information, 3D models and an AR viewer.
+    </p>
 
-      <!-- Embroidery -->
-      <a class="hero-card"
-         href="/sites/HeartscapesTheStructureofLife/SitePages/Trabeculae-Carnae.aspx">
-        <div class="hero-media">
-          <img
-            src="/sites/HeartscapesTheStructureofLife/SiteAssets/SitePages/ShowcaseHome(1)/2281208945embroidery_1762238122785.jpeg"
-            alt="Embroidery inspired by trabeculae carneae" />
-          <div class="hero-overlay">
-            <div class="hero-tag">Textile</div>
-            <div class="hero-title">Embroidery</div>
-            <div class="hero-cta">Explore trabeculae in thread →</div>
-          </div>
-        </div>
-        <div class="hero-meta">
-          <span class="hero-meta-label">Medium</span>
-          <span>Stitchwork · Myocardial texture</span>
-        </div>
-      </a>
-
-      <!-- Watercolour Histology -->
-      <a class="hero-card"
-         href="/sites/HeartscapesTheStructureofLife/SitePages/Watercolour.aspx">
-        <div class="hero-media">
-          <img
-            src="/sites/HeartscapesTheStructureofLife/SiteAssets/SitePages/ShowcaseHome(1)/2613915607pink-watercolour_1762238213650.jpeg"
-            alt="Pink watercolour evoking myocardial histology" />
-          <div class="hero-overlay">
-            <div class="hero-tag">Histology</div>
-            <div class="hero-title">Watercolour Histology</div>
-            <div class="hero-cta">See microstructure in wash →</div>
-          </div>
-        </div>
-        <div class="hero-meta">
-          <span class="hero-meta-label">Scale</span>
-          <span>Microscopic · Conceptual stain</span>
-        </div>
-      </a>
-
-      <!-- Historical Perspectives -->
-      <a class="hero-card"
-         href="/sites/HeartscapesTheStructureofLife/SitePages/Geo-historical.aspx">
-        <div class="hero-media">
-          <img
-            src="/sites/HeartscapesTheStructureofLife/SiteAssets/SitePages/ShowcaseHome(1)/1264338965Screenshot-2025-11-04-at-1.13.16-pm.png"
-            alt="Diagram or collage of historical cardiac imagery" />
-          <div class="hero-overlay">
-            <div class="hero-tag">History</div>
-            <div class="hero-title">Historical Perspectives</div>
-            <div class="hero-cta">Trace heart stories through time →</div>
-          </div>
-        </div>
-        <div class="hero-meta">
-          <span class="hero-meta-label">Theme</span>
-          <span>Geo-historical · Conceptual</span>
-        </div>
-      </a>
-
-      <!-- Aortic Stenosis -->
-      <a class="hero-card"
-         href="/sites/HeartscapesTheStructureofLife/SitePages/Valve-Pathology---Aortic-Stenosis.aspx">
-        <div class="hero-media">
-          <img
-            src="/sites/HeartscapesTheStructureofLife/SiteAssets/SitePages/ShowcaseHome(1)/2883132674leaves_1762238279630.jpeg"
-            alt="Leaf-like forms referencing aortic valve cusps" />
-          <div class="hero-overlay">
-            <div class="hero-tag">Pathology</div>
-            <div class="hero-title">Aortic Stenosis</div>
-            <div class="hero-cta">Enter the stenotic valve gallery →</div>
-          </div>
-        </div>
-        <div class="hero-meta">
-          <span class="hero-meta-label">Focus</span>
-          <span>Valve disease · Morphology</span>
-        </div>
-      </a>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-      <span>© Heartscapes – The Structure of Life</span>
-      <span>
-        Rebuilt from SharePoint hero configuration as standalone HTML.
-      </span>
-    </footer>
-  </div>
+    <h2>Sections</h2>
+    <ul>
+      <li><a href="/video.html">Video</a></li>
+      <li><a href="/objects/index.html">Objects</a></li>
+      <li><a href="/about/index.html">About us</a></li>
+      <li><a href="/ar-view.html">AR View</a></li>
+    </ul>
+  </main>
 </body>
 </html>
