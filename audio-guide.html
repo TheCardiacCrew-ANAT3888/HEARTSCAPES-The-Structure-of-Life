@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Heartscapes – Audio Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #050608;
+      color: #ffffff;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1.25rem;
+      background: #0b0d14;
+      border-bottom: 1px solid #242635;
+    }
+    .nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    .nav-brand {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      max-width: 40rem;
+      line-height: 1.5;
+    }
+    .track-list {
+      margin-top: 1.5rem;
+    }
+    .track {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #242635;
+    }
+    .track h2 {
+      font-size: 1.05rem;
+      margin: 0 0 0.3rem;
+    }
+    .track .meta {
+      font-size: 0.85rem;
+      color: #b0b4c8;
+      margin-bottom: 0.4rem;
+    }
+    audio {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Shared nav with Audio Guide added -->
+  <header>
+    <nav class="nav">
+      <a href="index.html" class="nav-brand">Heartscapes</a>
+      <div class="nav-links">
+        <a href="video.html">Video</a>
+        <a href="objects/index.html">Objects</a>
+        <a href="about/index.html">About us</a>
+        <a href="audio-guide.html">Audio Guide</a>
+        <a href="ar-view.html">AR View</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Audio Guide</h1>
+    <p>
+      Listen to short commentaries for each part of the exhibition. You can host the audio files
+      in this repository (e.g. an <code>audio/</code> folder) or on another service and link to them.
+    </p>
+
+    <div class="track-list">
+      <!-- Track 1: Cross Sections -->
+      <section class="track">
+        <h2>Cross Sections</h2>
+        <div class="meta">Object · Approx. 2–3 minutes</div>
+        <p>
+          Overview of the cross-sectioned heart specimen, clinical relevance, and how it maps to
+          standard echocardiographic views.
+        </p>
+        <!-- Replace src with your actual file path -->
+        <audio controls>
+          <source src="audio/cross-sections.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <!-- Track 2: Embroidery -->
+      <section class="track">
+        <h2>Embroidery</h2>
+        <div class="meta">Textile · Approx. 2 minutes</div>
+        <p>
+          Commentary on trabeculae carneae translated into stitchwork, texture and spatial thinking.
+        </p>
+        <audio controls>
+          <source src="audio/embroidery.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <!-- Track 3: Watercolour Histology -->
+      <section class="track">
+        <h2>Watercolour Histology</h2>
+        <div class="meta">Histology · Approx. 2 minutes</div>
+        <p>
+          Guided description of the histological concepts behind the watercolour piece.
+        </p>
+        <audio controls>
+          <source src="audio/watercolour-histology.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <!-- Track 4: Pathology Leaves -->
+      <section class="track">
+        <h2>Pathology Leaves (Aortic Stenosis)</h2>
+        <div class="meta">Valve pathology · Approx. 3 minutes</div>
+        <p>
+          Explanation of aortic valve architecture, stenotic changes, and clinical correlates.
+        </p>
+        <audio controls>
+          <source src="audio/pathology-leaves.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <!-- Track 5: Historical Perspectives -->
+      <section class="track">
+        <h2>Historical Perspectives</h2>
+        <div class="meta">History · Approx. 3 minutes</div>
+        <p>
+          Brief history of how our understanding of cardiac anatomy evolved over time.
+        </p>
+        <audio controls>
+          <source src="audio/historical-perspectives.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
+
